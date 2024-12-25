@@ -48,7 +48,7 @@ async function cashOrder(val){
 
 async function onlineOrder(val){
   setLoading(true)
- let {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:5173`,{
+ let {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${window.location.origin}`,{
     shippingAddress:val
   },{
     headers:{token:localStorage.getItem('userToken')} 
